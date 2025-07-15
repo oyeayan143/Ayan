@@ -1,35 +1,39 @@
 const axios = require("axios");
 
 module.exports.config = {
-  name: "botai",
+  name: "jinai",
   version: "1.0",
   hasPermission: 0,
   credits: "Kashif Raza + ChatGPT",
-  description: "AI reply using DeepSeek via OpenRouter",
+  description: "Reply AI when 'jin' is mentioned",
   commandCategory: "ai",
-  usages: "Auto reply when 'bot' is mentioned",
+  usages: "auto reply using jin keyword",
   cooldowns: 2
 };
 
-// ✅ Your OpenRouter API key (PRIVATE – don't share publicly)
-const OPENROUTER_API_KEY = "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";
+// ✅ Your OpenRouter API Key here
+const OPENROUTER_API_KEY = "sk-or-v1-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+
+const HEADERS = {
+  "Content-Type": "application/json",
+  "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
+  "HTTP-Referer": "https://facebook.com",
+  "X-Title": "MessengerBot"
+};
 
 module.exports.handleEvent = async function({ event, api }) {
   const body = event.body?.toLowerCase();
-  const threadID = event.threadID;
-  const messageID = event.messageID;
-
-  if (!body || !body.includes("bot")) return;
+  if (!body || !body.includes("jin")) return; // 🔥 Trigger word: "jin"
 
   try {
-    const response = await axios.post(
+    const res = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
       {
-        model: "deepseek-chat",
+        model: "openai/gpt-4o",
         messages: [
           {
             role: "system",
-            content: "Tum ek Urdu aur Roman Urdu samajhne wala intelligent Messenger bot ho. Har message ka useful, short aur human jaisa reply do."
+            content: "Tum Urdu aur Roman Urdu samajhne wala messenger AI ho, har message ka dil se jawab do, friendly aur short."
           },
           {
             role: "user",
@@ -37,25 +41,16 @@ module.exports.handleEvent = async function({ event, api }) {
           }
         ]
       },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
-          "HTTP-Referer": "https://facebook.com", // Optional but recommended
-          "X-Title": "MessengerBot"
-        }
-      }
+      { headers: HEADERS }
     );
 
-    const reply = response.data.choices[0].message.content;
-    return api.sendMessage(reply, threadID, messageID);
+    const reply = res.data.choices[0].message.content;
+    return api.sendMessage(reply, event.threadID, event.messageID);
 
   } catch (err) {
-    console.error("❌ DeepSeek API Error:", err.message);
-    return api.sendMessage("AI se reply lene mein error aaya 😢", threadID, messageID);
+    console.error("❌ OpenRouter Error:", err.response?.data || err.message);
+    return api.sendMessage("Jin ko reply karne me error aaya 😅", event.threadID, event.messageID);
   }
 };
 
-module.exports.run = async function() {
-  return; // Is command ko manually chalane ki zarurat nahi
-};
+module.exports.run = async () => {};
