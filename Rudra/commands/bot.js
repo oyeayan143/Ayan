@@ -22,7 +22,7 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
   var id = event.senderID;
   var name = await Users.getNameUser(event.senderID);
 
-  var tl = ["Haldi 🤲 Lagane Ki Umar Hai Iski 😎 Aur Ladkiyan 👉 Chuna Laga Kar Ja Rahi 😜 Hai" , "😂Jalne Ko Aag Kahte Hai 🔥 Buji Ko Rakh Kahte Hai 💨 Aur Jo Aapke Pas Nahi Usse Dimag🧠 Kahte Hai 😜", "Moongfali 🥜 Mai Dana 👎Nahi Trust 👉 Karne Ka Aab Zamana 🌎 Nahi 🤣" , "Bhai😎 Thoda☝ Break Laga 🙅🤘 Otherwise Do Char💑 Ka Or Breakup💔👫 Ho jayega😂" , "Apne Dimag 🧠 Ka Password Dena Akkal 👉 Install Karni 😜 Hai" , "Aapki Surat Mere ❤️ Dil Me Aise Bas 👌 Gayi Hai Jaise Chote Se 🚪 Darwaze Mein Bhains 🐂 Fas Gayi Hai 😬🤣" , "Nasheeli😌 Aankhe👁👁 + Katil💘 Smile😊 Bhai Ka High Attitude😎 Or Desi 🤕Style" , "Duniya Ka Sabse Muskil Kam Bina Dimag Wale Dosto Ko Jelna 😝🔥" , "g janu ap na q yad keya huma😒" , "Jo Uske ❤️ Pyaar Samjhe Woh Sabse Bada 🐴 Ghada Hai 😂" , "Teri Is Smile Par Girls To Kya Boys Bhi Fida Hai 😎😂"];
+  var tl = ["Haldi 🤲 Lagane Ki Umar Hai Iski 😎 Aur Ladkiyan 👉 Chuna Laga Kar Ja Rahi 😜 Hai","😂Jalne Ko Aag Kahte Hai 🔥 Buji Ko Rakh Kahte Hai 💨 Aur Jo Aapke Pas Nahi Usse Dimag🧠 Kahte Hai 😜","Moongfali 🥜 Mai Dana 👎Nahi Trust 👉 Karne Ka Aab Zamana 🌎 Nahi 🤣","Bhai😎 Thoda☝ Break Laga 🙅🤘 Otherwise Do Char💑 Ka Or Breakup💔👫 Ho jayega😂","Apne Dimag 🧠 Ka Password Dena Akkal 👉 Install Karni 😜 Hai","Aapki Surat Mere ❤️ Dil Me Aise Bas 👌 Gayi Hai Jaise Chote Se 🚪 Darwaze Mein Bhains 🐂 Fas Gayi Hai 😬🤣","Nasheeli😌 Aankhe👁👁 + Katil💘 Smile😊 Bhai Ka High Attitude😎 Or Desi 🤕Style","Duniya Ka Sabse Muskil Kam Bina Dimag Wale Dosto Ko Jelna 😝🔥","g janu ap na q yad keya huma😒","Jo Uske ❤️ Pyaar Samjhe Woh Sabse Bada 🐴 Ghada Hai 😂","Teri Is Smile Par Girls To Kya Boys Bhi Fida Hai 😎😂","Mujhe Ignore Karna Band Karo 😤 Warna Tumhare Ghar Ka WiFi Password Leak Kar Dunga 😎📡","Tera Attitude Ice Cream Jaisa Hai 🍦 Bas Farq Ye Hai — Melt Hone Ki Ni Sochta 😏🔥","Apna Dil Sambhalo Janeman ❤️ Ye Har Kisi Pe Aa Jata Hai 😜🤣","Mujhse Pyaar Karlo, Free Me Data Milega 😁📲 Aur Saath Me Unlimited Ghum 😎💃","Main Itna Handsome Hoon, Mirror Bhi Mujhe Dekh Ke Screenshot Leta Hai 😎📸","Tumhare Jaise Cute Log 🥺 Jurassic Park Me Nahi Balkay Dil Ke Park Me Chahiyein ❤️🌳","Mujhe Follow Mat Karo 😏 Main Ghar Tak Chhod Aata Hoon 🛵💘","Tera Naam WhatsApp Group Jaisa Hai... Har Kisi Ki Zubaan Par Hai 😅📱","Tera Reply Aaya To Dil Ne Dance Kiya 💃🕺 Nahi Aaya To System Error 😭🔧","Tere Jaise Chehre Pe To Caption Bhi Soch Soch Ke Aata Hai 😍✍️","Mujhe Mat Dekh 😏 Warna Dil De Baithoge Aur Main EMI Pe Nahin Leta 😜💸","Tujhe Online Dekh Kar Lagta Hai Zindagi Abhi Baaki Hai Mere Dost ❤️📲","Zarurat Se Zyada Cute Logon Ko Block Kar Dena Chahiye... Tumse Shuru Karein? 😜🚫","Mujhse Dosti Kar Lo, Varna Google Pe Search Karte Rahoge ‘Perfect Friend’ 😎🔍","Log Kehte Hain Pyaar Andha Hota Hai... Shayad Isi Liye Tujhe Dekh Ke Dil Phisal Gaya 😍🙈","Dimag Se Gareeb Logon Se Social Distance Barkarar Rakhein 😷🧠","Tere Jaisa Dost Ho To Dushman Ki Kya Zarurat 😅🔥","Tumhara Naam Soch Soch Ke Status Likh Diya, Ab Tum Reply Kar Lo Varna Poetry Shuru Kar Dunga 😜✍️","Main Toh Thik Hoon, Bas Teri Chat History Mein Apni Value Dekh Ke Udaas Hoon 😔💬","Pyaar To Internet Jaise Hai — Kabhi Slow, Kabhi Chala Hi Nahi 😭📡","Main Waqt Ke Saath Nahi Badalta... Main Waqt Ka Baap Hoon! 😎⌛"];
 var rand = tl[Math.floor(Math.random() * tl.length)]
 
     if ((event.body.toLowerCase() == "bot 😘") || (event.body.toLowerCase() == "lovely bot")) {
@@ -117,7 +117,7 @@ var rand = tl[Math.floor(Math.random() * tl.length)]
      return api.sendMessage("Ali Jan mera hai oyeee usko tang na kr me maro gi bohut 😠😠", threadID);
    };
    if ((event.body.toLowerCase() == "Assalamualaikum") || (event.body.toLowerCase() == "assalam-0-ualaikum")) {
-     return api.sendMessage("Walaikum Salam Dear Welcome to Ali Jan's Group 💋 Kaisy hain aap 🙃", threadID);
+     return api.sendMessage("Walaikum Salam Dear Welcome to Group 😘 Kaisy hain aap 🙃", threadID);
    };
 
    if ((event.body.toLowerCase() == "🙄") || (event.body.toLowerCase() == "🙄🙄")) {
@@ -147,7 +147,7 @@ var rand = tl[Math.floor(Math.random() * tl.length)]
    };
    
    if ((event.body.toLowerCase() == "😳") || (event.body.toLowerCase() == "😳😳")) {
-     return api.sendMessage("Itna heeran na ho bhai Ali Jan hi mera janu hai 🙈", threadID);
+     return api.sendMessage("aesy mat dekh pyaar ho jye ga 🙈", threadID);
    };
    if ((event.body.toLowerCase() == "🙈") || (event.body.toLowerCase() == "🤭")) {
      return api.sendMessage("aly aly mery beshrm janu ko aj sharm aa rahi ha 😜🤣😂😂😂", threadID);
@@ -168,8 +168,8 @@ var rand = tl[Math.floor(Math.random() * tl.length)]
      return api.sendMessage("aly aly apni bandr jaisi shakl pr dil rakh kr khush raha ha 🤣🤣🤣", threadID);
    };
    
-   if ((event.body.toLowerCase() == "Falak") || (event.body.toLowerCase() == "falak")) {
-     return api.sendMessage("me ly chalo apko falak tak ,🙈", threadID);
+   if ((event.body.toLowerCase() == "@Meher Mehruu ") || (event.body.toLowerCase() == "Meher Mehruu ")) {
+     return api.sendMessage("hye hye meri pagal Admin kash dil ki bhi admin hoti ,🙈", threadID);
    };
   
    if ((event.body.toLowerCase() == "does the bot have a brand") || (event.body.toLowerCase() == "does the bot owner have brand")) {
