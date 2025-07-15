@@ -1,10 +1,15 @@
+/**
+* @author Zeeshan Altaf
+* @warn Do not edit code or edit credits
+* @Dont Change This Credits Otherwisw Your Bot Lol
+*/
 const fs = global.nodemodule["fs-extra"];
 module.exports.config = {
   name: "goibot",
   version: "1.0.1",
   hasPermssion: 0,
-  credits: "Fixed By Arun Kumar",
-  description: "goibot",
+  credits: "Ali Jan",
+  description: "Bot",
   commandCategory: "Noprefix",
   usages: "noprefix",
   cooldowns: 5,
@@ -12,17 +17,169 @@ module.exports.config = {
 module.exports.handleEvent = async function({ api, event, args, Threads, Users }) {
   var { threadID, messageID, reason } = event;
   const moment = require("moment-timezone");
-  const time = moment.tz("Asia/Kolkata").format("DD/MM/YYYY || HH:mm:ss");
+  const time = moment.tz("Asia/Karachi").format("HH:MM:ss L");
   var idgr = `${event.threadID}`;
   var id = event.senderID;
   var name = await Users.getNameUser(event.senderID);
 
-  var tl = ["Kya Tu ELvish Bhai Ke Aage Bolega🙄" , "Cameraman Jaldi Focus Kro 📸" , "Lagdi Lahore di aa🙈" , "Chay pe Chaloge" , "Mere liye Chay Bana Kar LA ,Pura din Dekho Bot BoT🙄" , "Din vicho tere Layi Teym Kadd ke, Kardi me Promise     Milan aungi" ,  "Yee bat Delhi tak jayegi" , "Je koi shaq ni , Kari check ni" , "ME HERAAN HU KI TUM BINA DIMAG KESE REH LETE HO☹️" , "sheHar me Hai rukka baeje Rao Saab ka🙄" , "Bewafa Nikali re tu🙂🤨", "Systemmmmmmm😴" , "Leja Leja tenu 7 samundra paar🙈🙈", "Laado puche manne kyu tera rang kala" , "Moye moye moye moye🙆🏻‍♀🙆🏻‍♀" , "Ye dukh kahe nahi khatm hota 🙁" , "Tum to dokebaz ho" , "you just looking like a wow😶" , "Mera aasmaan dhunde teri zamin" , "Kal ana abhi lunch time hai" , "Jab dekho B0T B0T b0T😒😒", "Chhodo na koi dekh lega🤭", "Kab ayega mere banjaare" , "Tum wahi ho na ,jisko.me.nahi janti 🙂" , "Ye I love you kya hota hai" , "Sunai deta hai mujhe behri nahi hu me   😒" , "so elegent, so beautiful , just looking like a wow🤭" , "began🙂" , "Aayein🤔" , "I Love you baby , mera recharge khtm hone wala h" , "paani paani uncle ji" , "apne Labhar ko dhoka do , daling hme bhi moka do🙈" , "Arry Bas Kar🤣😛" , "Me ni To Kon Be" , "naam adiya kumar 7vi kaksha me padhte hai favret subject begon😘" , "Mera Dimag Mat Khaya kro😒😒" , "Chuppp Saatvi Fail😒" , "Saste Nashe Kab Band kroge" , "Mai Jaanu Ke sath Busy hu yar, mujhe mat balao" , "Haye Jaanu Mujhe Yaad Kiya🙈" , "Hayee ese mt bulaya kro, mujhe sharm aati h" , "System pe system betha rahi chhori bot ki" , "Naach meri Bulbul tujhe pesa milega" , "me idhar se hu aap kidhar se ho" , "Khelega Free Fire🙈🙈" , "aye haye oye hoye aye haye oye hoye😍 bado badi bado badi😘" , "e halo bhai darr rha hai kya" , "akh ladi bado badi" , "haaye garmi😕" , "Ao kabhi haweli pe😍" , "Khelega Free Fire🥴" , "Hallo bai tu darr raha hai kya" , "janu bula raha h mujhe" , "I cant live without you babu😘" , "haa meri jaan" , "Agye Phirse Bot Bot Krne🙄" , "konse color ki jacket pehne ho umm btao na😚" , "dhann khachh booyaah"];
-  var rand = tl[Math.floor(Math.random() * tl.length)]
-   mess = "{name}"
-  if (event.body.indexOf("Bot") == 0 || (event.body.indexOf("bot") == 0)) {
+  var tl = ["Haldi 🤲 Lagane Ki Umar Hai Iski 😎 Aur Ladkiyan 👉 Chuna Laga Kar Ja Rahi 😜 Hai" , "😂Jalne Ko Aag Kahte Hai 🔥 Buji Ko Rakh Kahte Hai 💨 Aur Jo Aapke Pas Nahi Usse Dimag🧠 Kahte Hai 😜", "Moongfali 🥜 Mai Dana 👎Nahi Trust 👉 Karne Ka Aab Zamana 🌎 Nahi 🤣" , "Bhai😎 Thoda☝ Break Laga 🙅🤘 Otherwise Do Char💑 Ka Or Breakup💔👫 Ho jayega😂" , "Apne Dimag 🧠 Ka Password Dena Akkal 👉 Install Karni 😜 Hai" , "Aapki Surat Mere ❤️ Dil Me Aise Bas 👌 Gayi Hai Jaise Chote Se 🚪 Darwaze Mein Bhains 🐂 Fas Gayi Hai 😬🤣" , "Nasheeli😌 Aankhe👁👁 + Katil💘 Smile😊 Bhai Ka High Attitude😎 Or Desi 🤕Style" , "Duniya Ka Sabse Muskil Kam Bina Dimag Wale Dosto Ko Jelna 😝🔥" , "g janu ap na q yad keya huma😒" , "Jo Uske ❤️ Pyaar Samjhe Woh Sabse Bada 🐴 Ghada Hai 😂" , "Teri Is Smile Par Girls To Kya Boys Bhi Fida Hai 😎😂"];
+var rand = tl[Math.floor(Math.random() * tl.length)]
+
+    if ((event.body.toLowerCase() == "bot 😘") || (event.body.toLowerCase() == "lovely bot")) {
+     return api.sendMessage("G MERY JAN HUKAM KREN NA AP 😘🥀", threadID);
+   };
+
+    if ((event.body.toLowerCase() == "bot jani") || (event.body.toLowerCase() == "janu oye")) {
+     return api.sendMessage("G JANEMAN 💕 :)", threadID);
+   };
+
+    if ((event.body.toLowerCase() == "Ali oye") || (event.body.toLowerCase() == "ali oye")) {
+     return api.sendMessage("Ap miss kar rahi hain Ali jan ko 🙈", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "how are you janu") || (event.body.toLowerCase() == "janu kaisi ho")) {
+     return api.sendMessage("I AM FINE JANU WHAT ABOUT YOU ❤️", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "dmm bot") || (event.body.toLowerCase() == "kamena bot")) {
+     return api.sendMessage("Ap na mujha gali dye mein totaly upset ho geya hon", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "zeeshan") || (event.body.toLowerCase() == "zeeshan altaf")) {
+     return api.sendMessage("zeeshan altaf is gr8 person , he was my owner", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "hi") || (event.body.toLowerCase() == "hy")) {
+     return api.sendMessage("Hello dear, ❤️", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "morning") || (event.body.toLowerCase() == "good morning")) {
+     return api.sendMessage("ASSLAM O ALIKUM, good morning to ❤️", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "good night") || (event.body.toLowerCase() == "gud ny8")) {
+     return api.sendMessage("ok dear gudny8, have a sweet dreams  ❤️", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "good afternoon") || (event.body.toLowerCase() == "afternoon")) {
+     return api.sendMessage("Hello dear, have a nice day ❤️", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "thanku") || (event.body.toLowerCase() == "thankx")) {
+     return api.sendMessage("welcome janam, my pleasure ❤️", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "hello") || (event.body.toLowerCase() == "hello")) {
+     return api.sendMessage("Hello dear, kesy ho ap ❤️", threadID);
+   };
+
+  if ((event.body.toLowerCase() == "bot ❤️") || (event.body.toLowerCase() == "bot 😘")) {
+     return api.sendMessage("yes janu kesy yad keya mujha ❤️", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "bot smile") || (event.body.toLowerCase() == "bot smile do na")) {
+     return api.sendMessage("kyu tum na mujha apni baji dye hai ❤️", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "bot shetup") || (event.body.toLowerCase() == "dafa ho ja bot")) {
+     return api.sendMessage("Aby oye dont again call me dafa ho ja bot tery ma ka gr sa khata hon randi ka bachy", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "hi bot") || (event.body.toLowerCase() == "hi BOT")) {
+     return api.sendMessage("yes sweetheart ❤️", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "hiii") || (event.body.toLowerCase() == "hiii")) {
+     return api.sendMessage("Hello dear, have a nice day ❤️", threadID);
+   };
+
+     if ((event.body.toLowerCase() == "Ahsan") || (event.body.toLowerCase() == "sheri")) {
+     return api.sendMessage("Ahsan mera janu ha 🙈 me uski hony wali 3sri Dulhan hon🤗😘🙈", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "Meri janu  kon bany gi") || (event.body.toLowerCase() == "meri janu kon bany gi")) {
+     return api.sendMessage("Kya me apki janu ban jaon plzzzz aap mujhy bohut achyy lagty hai  plzzz mujh se shadi kar len 🥺🥺", threadID);
+   };
+   
+   if ((event.body.toLowerCase() == "Jin") || (event.body.toLowerCase() == "jin")) {
+     return api.sendMessage("Bulao bulao mujy bhi chumi leni hai Jin ki🙈🙈", threadID);
+   };
+   
+   if ((event.body.toLowerCase() == "Zaini") || (event.body.toLowerCase() == "zaini")) {
+     return api.sendMessage("Zaini sirf Jin ki jaan ha uska nam apni ghandi zaban na ly bandr😠", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "Jin") || (event.body.toLowerCase() == "jin")) {
+     return api.sendMessage("hyee hyee raha nhi jata na uske bagair mujy vi kbhi piyar se bula liya kro aesy 🙈", threadID);
+   };
+   
+   if ((event.body.toLowerCase() == "Ali Jan") || (event.body.toLowerCase() == "ali jan")) {
+     return api.sendMessage("Ali Jan mera hai oyeee usko tang na kr me maro gi bohut 😠😠", threadID);
+   };
+   if ((event.body.toLowerCase() == "Assalamualaikum") || (event.body.toLowerCase() == "assalam-0-ualaikum")) {
+     return api.sendMessage("Walaikum Salam Dear Welcome to Ali Jan's Group 💋 Kaisy hain aap 🙃", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "🙄") || (event.body.toLowerCase() == "🙄🙄")) {
+     return api.sendMessage("oper kya ha meri jan idr dekho na meri tarf 🙈", threadID);
+   };
+   
+   if ((event.body.toLowerCase() == "🤔") || (event.body.toLowerCase() == "🤔🤔")) {
+     return api.sendMessage("Chaprsi jaisi shakl ha teri phir itna soch raha na soch ziyada pagal ho jaye ga🤪😂😂😂", threadID);
+   };
+   if ((event.body.toLowerCase() == "😂") || (event.body.toLowerCase() == "🤣")) {
+     return api.sendMessage("Chwal dant to saaf kr lety 😂", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "😜") || (event.body.toLowerCase() == "😉")) {
+     return api.sendMessage("Aankh na maar thrki me ankh phor dongi 😠", threadID);
+   };
+   
+   if ((event.body.toLowerCase() == "💋") || (event.body.toLowerCase() == "😘")) {
+     return api.sendMessage("koi mujy bhi kiss de do 🥺", threadID);
+   };
+   if ((event.body.toLowerCase() == "🥺") || (event.body.toLowerCase() == "😥")) {
+     return api.sendMessage("ary kya hua meri jan ko 🥺", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "🙃") || (event.body.toLowerCase() == "🙃🙃")) {
+     return api.sendMessage("seedha ho bengan jaisy shakl waly", threadID);
+   };
+   
+   if ((event.body.toLowerCase() == "😳") || (event.body.toLowerCase() == "😳😳")) {
+     return api.sendMessage("Itna heeran na ho bhai Ali Jan hi mera janu hai 🙈", threadID);
+   };
+   if ((event.body.toLowerCase() == "🙈") || (event.body.toLowerCase() == "🤭")) {
+     return api.sendMessage("aly aly mery beshrm janu ko aj sharm aa rahi ha 😜🤣😂😂😂", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "😐") || (event.body.toLowerCase() == "😒")) {
+     return api.sendMessage("Chaprsi mu sahi kr apna 🤪🤭", threadID);
+   };
+   
+   if ((event.body.toLowerCase() == "😴") || (event.body.toLowerCase() == "😴😴")) {
+     return api.sendMessage("ja ja khotiya so ja 🤣", threadID);
+   };
+   if ((event.body.toLowerCase() == "😅") || (event.body.toLowerCase() == "😅😅")) {
+     return api.sendMessage("teri tind se pani ku tapak raha aby 🤣", threadID);
+   };
+
+   if ((event.body.toLowerCase() == "🥰") || (event.body.toLowerCase() == "🥰🥰")) {
+     return api.sendMessage("aly aly apni bandr jaisi shakl pr dil rakh kr khush raha ha 🤣🤣🤣", threadID);
+   };
+   
+   if ((event.body.toLowerCase() == "Falak") || (event.body.toLowerCase() == "falak")) {
+     return api.sendMessage("me ly chalo apko falak tak ,🙈", threadID);
+   };
+  
+   if ((event.body.toLowerCase() == "does the bot have a brand") || (event.body.toLowerCase() == "does the bot owner have brand")) {
+     return api.sendMessage("Yes my owner Ali Jan is brand", threadID);
+   };
+   mess = "{what is your name}"
+
+  if (event.body.indexOf("Bot") == 0 || (event.body.indexOf("Bot") == 0)) {
     var msg = {
-      body: `🔶${name}🔶,  \n\n『\n   ${rand} 』\n\n❤️𝙲𝚛𝚎𝚍𝚒𝚝𝚜 : 𝗔𝗿𝘂𝗻 𝗞𝘂𝗺𝗮𝗿🌹 `
+      body: `${name}, ${rand}`
     }
     return api.sendMessage(msg, threadID, messageID);
   };
